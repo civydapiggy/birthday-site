@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise!</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4b5);
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 450px;
+    }
+
+    h1 {
+      color: #ff4f81;
+    }
+
+    button {
+      padding: 14px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4f81;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e83d6e;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 25px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 480px;
+      animation: pop 0.5s ease;
+    }
+
+    .popup img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 15px;
+    }
+
+    .close-button {
+      margin-top: 15px;
+      background: #555;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>I made you something 🎁</h1>
+    <p>Click the button for a surprise!</p>
+    <button onclick="openBirthdayPopup()">Open Surprise</button>
+  </div>
+
+  <div class="popup" id="birthdayPopup">
+    <div class="popup-content">
+      <h1>🎉 Happy Birthday FLorence! 🎂</h1>
+
+      <p>
+        I hope your birthday is filled with happiness, laughter,
+        and lots of cake!
+      </p>
+
+      <img
+        src="https://media.giphy.com/media/g5R9dok94mrIvplmZd/giphy.gif"
+        alt="Happy birthday GIF"
+      />
+
+      <br />
+
+      <button class="close-button" onclick="closeBirthdayPopup()">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function openBirthdayPopup() {
+      document.getElementById("birthdayPopup").style.display = "flex";
+    }
+
+    function closeBirthdayPopup() {
+      document.getElementById("birthdayPopup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
